@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios Exclusivos | El Verdadero Lujo es la Tranquilidad</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-deep-black: #0a0a0a;
+            --color-graphite: #333333;
+            --color-off-white: #fcfcfc;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--color-off-white);
+            color: var(--color-deep-black);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, .serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Animaciones de Scroll */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Hero Section Styling */
+        .hero-bg {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://images.unsplash.com/photo-1540962351504-03099e0a754b?q=80&w=2000&auto=format&fit=crop') center/cover no-repeat;
+            backdrop-filter: blur(2px);
+        }
+
+        .btn-luxury {
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--color-deep-black);
+            padding: 1rem 2rem;
+            transition: color 0.4s ease;
+        }
+
+        .btn-luxury::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--color-deep-black);
+            transition: left 0.4s ease;
+            z-index: -1;
+        }
+
+        .btn-luxury:hover::before {
+            left: 0;
+        }
+
+        .btn-luxury:hover {
+            color: white;
+        }
+
+        .divider {
+            width: 1px;
+            height: 100px;
+            background: linear-gradient(to bottom, transparent, var(--color-graphite), transparent);
+        }
+
+        /* Nueva estética de servicios */
+        .service-item {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid transparent;
+        }
+        
+        .service-item:hover {
+            background-color: white;
+            border-color: #eee;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+        }
+
+        .custom-cursor {
+            width: 20px;
+            height: 20px;
+            border: 1px solid var(--color-deep-black);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.1s ease;
+            display: none;
+        }
+
+        /* Estilos para la navegación inteligente */
+        nav {
+            transition: transform 0.4s ease-in-out, background-color 0.3s ease;
+        }
+        
+        .nav-hidden {
+            transform: translateY(-100%);
+        }
+
+        @media (min-width: 1024px) {
+            .custom-cursor { display: block; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="custom-cursor" id="cursor"></div>
+
+    <!-- Navegación Minimalista Inteligente -->
+    <nav id="smartNav" class="fixed w-full z-50 mix-blend-difference px-8 py-6 flex justify-between items-center text-white">
+        <div class="flex items-center">
+            <img src="https://i.ibb.co/nq4kgHhr/Captura-de-pantalla-2026-01-15-130929-Photoroom.png" alt="Logo Principal" class="h-28 md:h-32 w-auto object-contain mr-4 hidden" id="mainLogo" onerror="this.style.display='none'">
+            <div id="brandName" class="text-xl font-bold tracking-widest serif uppercase">Prestige</div>
+        </div>
+        <div class="hidden md:flex space-x-8 text-xs uppercase tracking-widest">
+            <a href="#servicios" class="hover:opacity-50 transition">Servicios</a>
+            <a href="#privacidad" class="hover:opacity-50 transition">Privacidad</a>
+            <a href="#contacto" class="hover:opacity-50 transition">Contacto</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center text-center px-4 hero-bg text-white">
+        <div class="max-w-4xl space-y-6">
+            <h1 class="text-5xl md:text-7xl lg:text-8xl leading-tight">
+                El verdadero lujo es la <span class="italic">tranquilidad</span>
+            </h1>
+            <p class="text-lg md:text-xl font-light opacity-90 max-w-2xl mx-auto leading-relaxed">
+                Gestión integral de servicios exclusivos y confidenciales para quienes exigen excelencia sin concesiones.
+            </p>
+            <div class="pt-8">
+                <a href="#contacto" class="inline-block bg-white text-black px-10 py-4 text-sm uppercase tracking-widest font-semibold hover:bg-gray-200 transition">
+                    Solicitar Acceso Privado
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Autoridad -->
+    <section class="py-32 bg-white px-8">
+        <div class="max-w-6xl mx-auto flex flex-col items-center">
+            <div class="divider mb-12"></div>
+            <h2 class="text-3xl md:text-4xl text-center mb-6 serif uppercase">Socio de Confianza</h2>
+            <p class="text-xl md:text-2xl text-center text-gray-600 max-w-3xl leading-relaxed font-light reveal">
+                No somos un proveedor convencional. Somos su <span class="text-black font-semibold">socio de confianza en España</span>. Creamos orden y control donde otros ven complejidad.
+            </p>
+        </div>
+    </section>
+
+    <!-- Propuesta de Servicios -->
+    <section id="servicios" class="py-32 bg-[#f8f8f8] px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
+                
+                <!-- Columna 01: Movilidad -->
+                <div class="reveal space-y-12">
+                    <div class="border-b border-black pb-4">
+                        <span class="text-[10px] uppercase tracking-[0.3em] text-gray-400 block mb-2">01 / Movilidad</span>
+                        <h3 class="text-3xl serif">Tranquilidad Premium</h3>
+                    </div>
+                    
+                    <div class="space-y-10">
+                        <div class="service-item p-4 -ml-4 group">
+                            <svg class="w-6 h-6 mb-4 text-gray-400 group-hover:text-black transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9"></path></svg>
+                            <h4 class="text-sm font-semibold uppercase tracking-wider mb-2">Viajes de Negocios</h4>
+                            <p class="text-xs text-gray-500 leading-relaxed">Gestión integral con presencia invisible y logística impecable.</p>
+                        </div>
+
+                        <div class="service-item p-4 -ml-4 group">
+                            <svg class="w-6 h-6 mb-4 text-gray-400 group-hover:text-black transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                            <h4 class="text-sm font-semibold uppercase tracking-wider mb-2">Alojamiento de élite</h4>
+                            <p class="text-xs text-gray-500 leading-relaxed">Villas privadas y suites fuera del mercado convencional.</p>
+                        </div>
+
+                        <div class="service-item p-4 -ml-4 group">
+                            <svg class="w-6 h-6 mb-4 text-gray-400 group-hover:text-black transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
+                            <h4 class="text-sm font-semibold uppercase tracking-wider mb-2">Transporte Exclusivo</h4>
+                            <p class="text-xs text-gray-500 leading-relaxed">Logística coordinada en aire, mar y tierra al detalle.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Columna 02: Familia -->
+                <div class="reveal space-y-12" style="transition-delay: 0.2s;">
+                    <div class="border-b border-black pb-4">
+                        <span class="text-[10px] uppercase tracking-[0.3em] text-gray-400 block mb-2">02 / Familia</span>
+                        <h3 class="text-3xl serif">Estabilidad Familiar</h3>
+                    </div>
+                    
+                    <div class="space-y-10">
+                        <div class="service-item p-4 -ml-4 group">
+                            <svg class="w-6 h-6 mb-4 text-gray-400 group-hover:text-black transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                            <h4 class="text-sm font-semibold uppercase tracking-wider mb-2">Relocation Off-market</h4>
+                            <p class="text-xs text-gray-500 leading-relaxed">Búsqueda de vivienda en mercados estrictamente privados.</p>
+                        </div>
+
+                        <div class="service-item p-4 -ml-4 group">
+                            <svg class="w-6 h-6 mb-4 text-gray-400 group-hover:text-black transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.168.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                            <h4 class="text-sm font-semibold uppercase tracking-wider mb-2">Entorno Familiar</h4>
+                            <p class="text-xs text-gray-500 leading-relaxed">Coordinación de colegios y asistencia personal de confianza.</p>
+                        </div>
+
+                        <div class="service-item p-4 -ml-4 group">
+                            <svg class="w-6 h-6 mb-4 text-gray-400 group-hover:text-black transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1m-4 0a1 1 0 001-1m-1 1H9m4-1h2m4 0h1"></path></svg>
+                            <h4 class="text-sm font-semibold uppercase tracking-wider mb-2">Logística Sensible</h4>
+                            <p class="text-xs text-gray-500 leading-relaxed">Mudanzas privadas con máxima confidencialidad en rutas.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Columna 03: Gestión -->
+                <div class="reveal space-y-12" style="transition-delay: 0.4s;">
+                    <div class="border-b border-black pb-4">
+                        <span class="text-[10px] uppercase tracking-[0.3em] text-gray-400 block mb-2">03 / Gestión</span>
+                        <h3 class="text-3xl serif">Protección Exclusiva</h3>
+                    </div>
+                    
+                    <div class="space-y-10">
+                        <div class="service-item p-4 -ml-4 group">
+                            <svg class="w-6 h-6 mb-4 text-gray-400 group-hover:text-black transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                            <h4 class="text-sm font-semibold uppercase tracking-wider mb-2">Seguridad Especializada</h4>
+                            <p class="text-xs text-gray-500 leading-relaxed">Escoltas y estudios de riesgo preventivos discretos.</p>
+                        </div>
+
+                        <div class="service-item p-4 -ml-4 group">
+                            <svg class="w-6 h-6 mb-4 text-gray-400 group-hover:text-black transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+                            <h4 class="text-sm font-semibold uppercase tracking-wider mb-2">Compras Exclusivas</h4>
+                            <p class="text-xs text-gray-500 leading-relaxed">Acceso a activos restringidos al mercado general.</p>
+                        </div>
+
+                        <div class="service-item p-4 -ml-4 group">
+                            <svg class="w-6 h-6 mb-4 text-gray-400 group-hover:text-black transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <h4 class="text-sm font-semibold uppercase tracking-wider mb-2">Gestión del Tiempo</h4>
+                            <p class="text-xs text-gray-500 leading-relaxed">Optimizamos su activo más valioso con eficacia total.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Protocolo de Privacidad -->
+    <section id="privacidad" class="py-32 bg-black text-white px-8 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-1/2 h-full bg-[#111] -skew-x-12 translate-x-1/4 z-0"></div>
+        <div class="max-w-6xl mx-auto relative z-10">
+            <h2 class="text-4xl md:text-5xl mb-16 serif reveal">Protocolo de Privacidad Absoluta</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div class="space-y-4 reveal">
+                    <h4 class="text-xl font-semibold border-l-2 border-white pl-4 italic">Sin Huella</h4>
+                    <p class="text-gray-400 font-light text-sm">No publicitamos clientes ni utilizamos sus nombres como referencia.</p>
+                </div>
+                <div class="space-y-4 reveal" style="transition-delay: 0.2s;">
+                    <h4 class="text-xl font-semibold border-l-2 border-white pl-4 italic">Blindaje Legal</h4>
+                    <p class="text-gray-400 font-light text-sm">Acuerdos de confidencialidad y canales cifrados de punto a punto.</p>
+                </div>
+                <div class="space-y-4 reveal" style="transition-delay: 0.4s;">
+                    <h4 class="text-xl font-semibold border-l-2 border-white pl-4 italic">Control Limitado</h4>
+                    <p class="text-gray-400 font-light text-sm">Acceso a la información restringido por niveles de seguridad.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Metodología de Trabajo -->
+    <section class="py-32 bg-white px-8">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-20 reveal">
+                <h2 class="text-4xl mb-4 serif uppercase">Eficacia en la Ejecución</h2>
+                <p class="text-gray-500 uppercase tracking-[0.3em] text-xs">Tres pasos hacia su tranquilidad</p>
+            </div>
+            
+            <div class="flex flex-col md:flex-row justify-between items-start space-y-12 md:space-y-0">
+                <div class="flex-1 text-center px-6 reveal">
+                    <span class="text-5xl font-light text-gray-200 block mb-4 serif">01</span>
+                    <h5 class="text-lg font-bold mb-2 uppercase">Contacto Privado</h5>
+                    <p class="text-xs text-gray-600 font-light">Línea segura de comunicación directa.</p>
+                </div>
+                <div class="hidden md:block w-px h-24 bg-gray-100 self-center"></div>
+                <div class="flex-1 text-center px-6 reveal" style="transition-delay: 0.2s;">
+                    <span class="text-5xl font-light text-gray-200 block mb-4 serif">02</span>
+                    <h5 class="text-lg font-bold mb-2 uppercase">Evaluación</h5>
+                    <p class="text-xs text-gray-600 font-light">Análisis profundo bajo el prisma de la excelencia.</p>
+                </div>
+                <div class="hidden md:block w-px h-24 bg-gray-100 self-center"></div>
+                <div class="flex-1 text-center px-6 reveal" style="transition-delay: 0.4s;">
+                    <span class="text-5xl font-light text-gray-200 block mb-4 serif">03</span>
+                    <h5 class="text-lg font-bold mb-2 uppercase">Ejecución</h5>
+                    <p class="text-xs text-gray-600 font-light">Operación discreta con resultados impecables.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Micro-copy de Cierre -->
+    <section class="py-20 bg-gray-50 text-center">
+        <p class="text-2xl md:text-3xl italic serif reveal text-gray-800">"Usted decide. Nosotros lo ejecutamos"</p>
+    </section>
+
+    <!-- Formulario / Contacto -->
+    <section id="contacto" class="py-32 bg-white px-8 border-t border-gray-100">
+        <div class="max-w-3xl mx-auto text-center space-y-12">
+            <div class="reveal">
+                <h2 class="text-4xl mb-6 serif uppercase text-gray-900">Solicitud de Acceso</h2>
+                <p class="text-gray-500 font-light text-sm">El acceso es estrictamente limitado y evaluado individualmente.</p>
+            </div>
+            
+            <form id="contactForm" class="space-y-8 text-left reveal">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="border-b border-gray-300 py-2 focus-within:border-black transition">
+                        <label class="block text-[10px] uppercase tracking-widest text-gray-400">Nombre Completo</label>
+                        <!-- Añadido atributo name para servicios de email -->
+                        <input type="text" name="name" class="w-full bg-transparent outline-none py-2 font-light" placeholder="Ej. Sr. Alexander Vance" required>
+                    </div>
+                    <div class="border-b border-gray-300 py-2 focus-within:border-black transition">
+                        <label class="block text-[10px] uppercase tracking-widest text-gray-400">Canal de Contacto</label>
+                        <!-- Añadido atributo name para servicios de email -->
+                        <input type="email" name="email" class="w-full bg-transparent outline-none py-2 font-light" placeholder="E-mail o Teléfono Cifrado" required>
+                    </div>
+                </div>
+                <div class="border-b border-gray-300 py-2 focus-within:border-black transition">
+                    <label class="block text-[10px] uppercase tracking-widest text-gray-400">Naturaleza de su Consulta</label>
+                    <!-- Añadido atributo name para servicios de email -->
+                    <textarea name="message" class="w-full bg-transparent outline-none py-2 font-light h-32 resize-none" placeholder="Describa brevemente sus requerimientos..." required></textarea>
+                </div>
+                <div class="text-center pt-8">
+                    <!-- El botón ahora es tipo submit -->
+                    <button type="submit" class="btn-luxury uppercase text-[10px] tracking-[0.3em] font-bold">
+                        Enviar Solicitud Confidencial
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-24 bg-black text-white px-8 text-center">
+        <div class="flex flex-col items-center space-y-8">
+            <div class="w-full flex justify-center py-6">
+                <img src="https://i.ibb.co/nq4kgHhr/Captura-de-pantalla-2026-01-15-130929-Photoroom.png" alt="Logo Footer" class="max-h-56 md:max-h-64 w-auto object-contain opacity-80 block transition-all" onerror="this.style.display='none'">
+            </div>
+            <div class="text-[9px] tracking-[0.4em] opacity-30 font-light">
+                BLACK GLOBAL SPAIN &copy; 2024. DISCRECIÓN ASEGURADA.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts de Interacción -->
+    <script>
+        const cursor = document.getElementById('cursor');
+        document.addEventListener('mousemove', e => {
+            cursor.style.transform = `translate(${e.clientX - 10}px, ${e.clientY - 10}px)`;
+        });
+
+        let lastScrollTop = 0;
+        const navbar = document.getElementById('smartNav');
+
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop > lastScrollTop && scrollTop > 100) {
+                navbar.classList.add('nav-hidden');
+            } else {
+                navbar.classList.remove('nav-hidden');
+            }
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+        }, false);
+
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+
+        window.addEventListener("scroll", reveal);
+        reveal();
+
+        // Integración del Formulario
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault(); // Evita que la página se recargue
+
+            // RECOMENDACIÓN: Sustituye 'TU_ENDPOINT_AQUI' por tu URL de Formspree
+            // Ejemplo: const endpoint = 'https://formspree.io/f/tu_codigo_id';
+            const endpoint = 'TU_ENDPOINT_AQUI'; 
+
+            if (endpoint === 'TU_ENDPOINT_AQUI') {
+                // Simulación visual si no hay endpoint configurado todavía
+                showThankYou();
+                return;
+            }
+
+            const formData = new FormData(this);
+            
+            fetch(endpoint, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    showThankYou();
+                } else {
+                    alert('Error al enviar. Por favor, inténtelo de nuevo.');
+                }
+            });
+        });
+
+        function showThankYou() {
+            const message = document.createElement('div');
+            message.innerHTML = "<p class='text-green-800 font-serif italic text-xl reveal active'>Su solicitud está siendo procesada bajo estrictos protocolos de confidencialidad. Nos pondremos en contacto a la brevedad.</p>";
+            contactForm.replaceWith(message);
+        }
+
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero-bg');
+            if(hero) hero.style.backgroundPositionY = -(scrolled * 0.5) + 'px';
+        });
+
+        const logoImg = document.getElementById('mainLogo');
+        const brandName = document.getElementById('brandName');
+        
+        if (logoImg) {
+            const currentSrc = logoImg.getAttribute('src');
+            if (currentSrc && currentSrc.includes('i.ibb.co')) {
+                logoImg.classList.remove('hidden');
+                if (brandName) brandName.classList.add('hidden');
+            }
+        }
+    </script>
+</body>
+</html>
